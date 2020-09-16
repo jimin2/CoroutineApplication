@@ -1,0 +1,65 @@
+package com.example.testapplication.module
+
+import com.example.testapplication.BuildConfig
+import com.example.testapplication.network.ApiService
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.dsl.module
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
+
+// 레트로핏 객체에 대한 모듈
+val retrofitModule = module {
+
+    single {
+        OkHttpClient.Builder()
+//            .addInterceptor(get<Interceptor>())
+            .addInterceptor(get<HttpLoggingInterceptor>())
+            .build()
+    }
+
+//    single {
+//        Interceptor { chain: Interceptor.Chain ->
+//            val original = chain.request()
+//            chain.proceed(original.newBuilder().apply {
+//                addHeader("Authorizaion_Header", "access_token")
+//            }.build())
+//        }
+//    }
+
+    single {
+        HttpLoggingInterceptor().apply {
+            level = if (BuildConfig.DEBUG) {
+                HttpLoggingInterceptor.Level.BODY
+            } else {
+                HttpLoggingInterceptor.Level.NONE
+            }
+        }
+    }
+
+    single {
+        GsonBuilder()
+            .setLenient()
+            .create()
+    }
+
+    single {
+        Retrofit.Builder()
+            .baseUrl("https://addb.interpark.com")
+            .client(get())
+            .addConverterFactory(GsonConverterFactory.create(get<Gson>()))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build()
+    }
+
+    single {
+        get<Retrofit>().create(
+            ApiService::class.java
+        )
+    }
+
+}
