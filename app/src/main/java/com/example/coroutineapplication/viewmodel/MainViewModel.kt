@@ -1,9 +1,9 @@
-package com.example.testapplication.viewmodel
+package com.example.coroutineapplication.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.example.testapplication.model.Response
-import com.example.testapplication.repository.Repository
+import com.example.coroutineapplication.model.Response
+import com.example.coroutineapplication.repository.Repository
 import kotlinx.coroutines.*
 
 class MainViewModel(private val repository: Repository): ViewModel() {

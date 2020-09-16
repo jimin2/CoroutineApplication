@@ -87,4 +87,4 @@
 ########--------End : Retrofit + RxJava--------#########
 
 # ALSO REMEMBER KEEPING YOUR MODEL CLASSES
--keep com.example.testapplication.model.** { *; }
+-keep com.example.coroutineapplication.model.** { *; }

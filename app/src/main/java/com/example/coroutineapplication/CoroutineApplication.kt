@@ -1,15 +1,15 @@
-package com.example.testapplication
+package com.example.coroutineapplication
 
 import android.app.Application
-import com.example.testapplication.module.appModule
-import com.example.testapplication.module.retrofitModule
-import com.example.testapplication.module.viewModelModule
+import com.example.coroutineapplication.module.appModule
+import com.example.coroutineapplication.module.retrofitModule
+import com.example.coroutineapplication.module.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 
-class TestApplication : Application() {
+class CoroutineApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
@@ -18,7 +18,7 @@ class TestApplication : Application() {
 
             androidLogger(Level.ERROR)
 
-            androidContext(this@TestApplication)
+            androidContext(this@CoroutineApplication)
 
             modules(
                 retrofitModule,

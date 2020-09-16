@@ -1,6 +1,6 @@
-package com.example.testapplication.network
+package com.example.coroutineapplication.network
 
-import com.example.testapplication.model.Response
+import com.example.coroutineapplication.model.Response
 import retrofit2.http.GET
 
 interface ApiService {

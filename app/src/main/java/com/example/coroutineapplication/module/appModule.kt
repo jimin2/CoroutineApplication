@@ -1,6 +1,6 @@
-package com.example.testapplication.module
+package com.example.coroutineapplication.module
 
-import com.example.testapplication.repository.Repository
+import com.example.coroutineapplication.repository.Repository
 import org.koin.dsl.module
 
 val appModule = module {

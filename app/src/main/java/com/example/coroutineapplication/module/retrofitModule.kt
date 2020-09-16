@@ -1,10 +1,9 @@
-package com.example.testapplication.module
+package com.example.coroutineapplication.module
 
-import com.example.testapplication.BuildConfig
-import com.example.testapplication.network.ApiService
+import com.example.coroutineapplication.BuildConfig
+import com.example.coroutineapplication.network.ApiService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
