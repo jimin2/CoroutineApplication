@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("https://jimin-test.herokuapp.com/db")
+    @GET("https://jimin-test.herokuapp.com/profile")
     suspend fun getTEST(): Response
 
 }
