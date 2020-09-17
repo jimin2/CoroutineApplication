@@ -1,6 +1,6 @@
 package com.example.coroutineapplication.repository
 
-import com.example.coroutineapplication.model.Response
+import com.example.coroutineapplication.data.Response
 import com.example.coroutineapplication.network.ApiService
 import com.example.coroutineapplication.network.Result
 

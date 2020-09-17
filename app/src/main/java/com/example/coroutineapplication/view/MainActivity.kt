@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.coroutineapplication.R
-import com.example.coroutineapplication.model.Response
 import com.example.coroutineapplication.network.Result
 import com.example.coroutineapplication.viewmodel.MainViewModel
 import org.koin.android.viewmodel.ext.android.viewModel

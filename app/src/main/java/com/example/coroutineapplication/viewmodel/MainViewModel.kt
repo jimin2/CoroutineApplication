@@ -1,8 +1,7 @@
 package com.example.coroutineapplication.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.*
-import com.example.coroutineapplication.model.Response
+import com.example.coroutineapplication.data.Response
 import com.example.coroutineapplication.network.Result
 import com.example.coroutineapplication.repository.Repository
 import kotlinx.coroutines.*
@@ -78,6 +77,7 @@ class MainViewModel(private val repository: Repository): ViewModel() {
     private suspend fun apiCall() = withContext(Dispatchers.IO) {
         val result = repository.getTEST()
 
+        // setValue는 백그라운드에서 사용이 불가능하므로, postValue 사용
         _resultResponse.postValue(result)
     }
 
