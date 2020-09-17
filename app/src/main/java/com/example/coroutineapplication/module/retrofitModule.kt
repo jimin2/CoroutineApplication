@@ -51,6 +51,8 @@ val retrofitModule = module {
             .baseUrl("https://addb.interpark.com")
             .client(get())
             .addConverterFactory(GsonConverterFactory.create(get<Gson>()))
+
+            // Observable이나 Single같은 타입을 뱉을 수 있음
 //            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
