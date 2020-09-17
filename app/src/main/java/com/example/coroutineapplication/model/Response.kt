@@ -10,8 +10,8 @@ data class Response(
 data class Profile(
 //    @SerializedName("name")
     val name: String? = null,
-//    @SerializedName("age")
-    val age: Int? = null,
+    @SerializedName("age", alternate = ["age1"])
+    val age: Any? = null,
 //    @SerializedName("address")
     val address: String? = null
 )

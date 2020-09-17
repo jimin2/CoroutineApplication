@@ -3,6 +3,7 @@ package com.example.coroutineapplication.viewmodel
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.coroutineapplication.model.Response
+import com.example.coroutineapplication.network.Result
 import com.example.coroutineapplication.repository.Repository
 import kotlinx.coroutines.*
 
@@ -18,8 +19,8 @@ class MainViewModel(private val repository: Repository): ViewModel() {
     private val _toastMsg = MutableLiveData<String>()
     val toastMsg: LiveData<String> get() = _toastMsg
 
-    private val _resultResponse = MutableLiveData<Response>()
-    val resultResponse: LiveData<Response> get() = _resultResponse
+    private val _resultResponse = MutableLiveData<Result<Response>>()
+    val resultResponse: LiveData<Result<Response>> get() = _resultResponse
 
 //    init {
 //        viewModelScope.launch {
@@ -76,7 +77,6 @@ class MainViewModel(private val repository: Repository): ViewModel() {
      */
     private suspend fun apiCall() = withContext(Dispatchers.IO) {
         val result = repository.getTEST()
-        Log.d("jmlee", "result = $result")
 
         _resultResponse.postValue(result)
     }
