@@ -51,7 +51,7 @@ val retrofitModule = module {
             .baseUrl("https://addb.interpark.com")
             .client(get())
             .addConverterFactory(GsonConverterFactory.create(get<Gson>()))
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
 

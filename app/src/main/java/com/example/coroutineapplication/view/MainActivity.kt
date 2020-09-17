@@ -1,7 +1,6 @@
 package com.example.coroutineapplication.view
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         mainViewModel.resultResponse.observe(this, Observer {
-            Log.d("jmlee", "Response = ${it.toString()}")
             Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
         })
     }

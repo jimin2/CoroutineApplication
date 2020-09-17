@@ -68,7 +68,7 @@ class MainViewModel(private val repository: Repository): ViewModel() {
      * coroutine을 수행하는 코드를 하나의 함수로 표현하고 싶을땐, suspend 키워드를 사용
      */
     private suspend fun doDelay() = withContext(Dispatchers.Default) {
-        delay(3000L)
+        delay(2000L)
     }
 
     /**
