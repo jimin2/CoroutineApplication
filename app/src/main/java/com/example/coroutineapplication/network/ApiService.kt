@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 interface ApiService {
 
-//    @GET("https://jimin-test.herokuapp.com/profile")
-    @GET("https://jimin-test.herokuapp.com/db")
+//    @GET("/profile")
+    @GET("/db")
     suspend fun getTEST(): Response
 }

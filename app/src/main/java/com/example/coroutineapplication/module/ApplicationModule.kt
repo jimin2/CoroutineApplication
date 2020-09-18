@@ -22,7 +22,7 @@ class ApplicationModule {
 
     @Provides
 //    fun provideBaseUrl() = BuildConfig.BASE_URL
-    fun provideBaseUrl() = "https://addb.interpark.com"
+    fun provideBaseUrl() = "https://jimin-test.herokuapp.com"
 
     @Provides
     @Singleton
