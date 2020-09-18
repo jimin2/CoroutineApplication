@@ -1,11 +1,17 @@
 package com.example.coroutineapplication.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.coroutineapplication.data.Response
 import com.example.coroutineapplication.network.Result
 import com.example.coroutineapplication.repository.Repository
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainViewModel @ViewModelInject constructor(
     private val repository: Repository

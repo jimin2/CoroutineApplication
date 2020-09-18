@@ -11,8 +11,6 @@ import com.example.coroutineapplication.network.Result
 import com.example.coroutineapplication.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import org.koin.android.viewmodel.ext.android.viewModel
-import javax.inject.Inject
 
 // android 클래스 및 lifecycle의 적절한 지점에서 hilt 구성 요소로 인스턴스화 되어 처리됨
 @AndroidEntryPoint
@@ -20,7 +18,9 @@ class MainActivity : AppCompatActivity() {
 
 //    private val mainViewModel : MainViewModel by viewModel()
 
-    private val mainViewModel by viewModels<MainViewModel>()
+    private val mainViewModel: MainViewModel by viewModels()
+
+//    @Inject lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
