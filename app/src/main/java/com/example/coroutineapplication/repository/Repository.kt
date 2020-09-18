@@ -3,8 +3,11 @@ package com.example.coroutineapplication.repository
 import com.example.coroutineapplication.data.Response
 import com.example.coroutineapplication.network.ApiService
 import com.example.coroutineapplication.network.Result
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class Repository(private val webService: ApiService) {
+@Singleton
+class Repository @Inject constructor(private val webService: ApiService) {
 
     suspend fun getTEST(): Result<Response> {
         val data = webService.getTEST()

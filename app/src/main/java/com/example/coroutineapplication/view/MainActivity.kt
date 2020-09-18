@@ -3,16 +3,24 @@ package com.example.coroutineapplication.view
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.coroutineapplication.R
 import com.example.coroutineapplication.network.Result
 import com.example.coroutineapplication.viewmodel.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import javax.inject.Inject
 
+// android 클래스 및 lifecycle의 적절한 지점에서 hilt 구성 요소로 인스턴스화 되어 처리됨
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val mainViewModel : MainViewModel by viewModel()
+//    private val mainViewModel : MainViewModel by viewModel()
+
+    private val mainViewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                         is Double -> Log.d(TAG, "age is Double")
                         is Any -> Log.d(TAG, "age is Any")
                     }
+
+                    tv_response.text = data.toString()
 
                     Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
                 }

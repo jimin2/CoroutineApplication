@@ -1,12 +1,17 @@
 package com.example.coroutineapplication.viewmodel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.example.coroutineapplication.data.Response
 import com.example.coroutineapplication.network.Result
 import com.example.coroutineapplication.repository.Repository
 import kotlinx.coroutines.*
 
-class MainViewModel(private val repository: Repository): ViewModel() {
+class MainViewModel @ViewModelInject constructor(
+    private val repository: Repository
+): ViewModel() {
+
+//class MainViewModel (private val repository: Repository): ViewModel() {
 
     /**
      * CoroutineScope 사용시에는 백그라운드에서 해당 구문이 실행하지 않게 하기 위해서,

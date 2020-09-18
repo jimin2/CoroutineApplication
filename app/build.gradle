@@ -2,6 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+// hilt
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -80,4 +84,14 @@ dependencies {
     // koin
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+    def hilt_version = "2.28.1-alpha"
+    // hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    def hilt_viewmodel_version = "1.0.0-alpha01"
+    // hilt viewmodel
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodel_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_viewmodel_version"
 }
