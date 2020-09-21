@@ -1,10 +1,9 @@
-package com.example.coroutineapplication.module
+package com.example.coroutineapplication.di.module
 
 import com.example.coroutineapplication.BuildConfig
-import com.example.coroutineapplication.network.ApiHelper
-import com.example.coroutineapplication.network.ApiHelperImpl
-import com.example.coroutineapplication.network.ApiService
-import com.google.gson.Gson
+import com.example.coroutineapplication.data.api.ApiHelper
+import com.example.coroutineapplication.data.api.ApiHelperImpl
+import com.example.coroutineapplication.data.api.ApiService
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -16,10 +15,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+// hilt에서 사용
 @Module
+
+// 여기에 제공된 종속성이 애플리케이션 전체에서 사용됨
 @InstallIn(ApplicationComponent::class)
 class ApplicationModule {
 
+    // 종속성을 제공
     @Provides
 //    fun provideBaseUrl() = BuildConfig.BASE_URL
     fun provideBaseUrl() = "https://jimin-test.herokuapp.com"

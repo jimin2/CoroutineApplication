@@ -1,13 +1,13 @@
-package com.example.coroutineapplication.viewmodel
+package com.example.coroutineapplication.ui.main
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.coroutineapplication.data.Response
-import com.example.coroutineapplication.network.Result
-import com.example.coroutineapplication.repository.Repository
+import com.example.coroutineapplication.data.model.Response
+import com.example.coroutineapplication.data.Result
+import com.example.coroutineapplication.data.repository.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.example.coroutineapplication.view
+package com.example.coroutineapplication.ui.main
 
 import android.os.Bundle
 import android.util.Log
@@ -7,12 +7,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.coroutineapplication.R
-import com.example.coroutineapplication.network.Result
-import com.example.coroutineapplication.viewmodel.MainViewModel
+import com.example.coroutineapplication.data.Result
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
 // android 클래스 및 lifecycle의 적절한 지점에서 hilt 구성 요소로 인스턴스화 되어 처리됨
+// Dagger-Hilt can now inject dependencies in this class.
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

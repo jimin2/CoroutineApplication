@@ -1,16 +1,16 @@
-package com.example.coroutineapplication.module
+package com.example.coroutineapplication.di.module
 
 import com.example.coroutineapplication.BuildConfig
-import com.example.coroutineapplication.network.ApiService
+import com.example.coroutineapplication.data.api.ApiService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
+// koin에서 사용
 // 레트로핏 객체에 대한 모듈
 val retrofitModule = module {
 
